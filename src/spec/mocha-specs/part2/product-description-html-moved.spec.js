@@ -25,7 +25,6 @@ describe("ProductDescription", () => {
     productDescriptionNodes[0].attrs.find(
       attr => (description = attr.value.match(/description/))
     );
-
     let element;
     try {
       element = productDescriptionNodes[0].tagName;
@@ -64,9 +63,8 @@ describe("ProductDescription", () => {
       element === "div",
       "The ProductDescriptionComponent's HTML file doesn't contain a `div` tag."
     );
-
     assert(
-      !!description,
+      !description,
       "It looks like the ProductPageComponent still contains a `div` tag with a class of `description` - have you tried moving it yet?"
     );
   });
