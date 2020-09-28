@@ -13,7 +13,7 @@ export class ProductService {
    }
 
    getAlbum(id: number) {
-    return this._http.get(this._albumUrl).pipe(map((incomingData) => incomingData.json()));
+    return this._http.get(this._albumUrl).pipe(map((response) => response.json()));
    }
 
 }
