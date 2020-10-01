@@ -10,7 +10,8 @@ describe('ProductService getAlbum Method', function () {
     } catch (e) {
       assert(false, "The ProductService hasn't been created yet.")
     }
-    let re = /import\s*\{\s*Observable\s*\}\s*from\s*(\"|\')rxjs\/Observable(\"|\')\s*\;?/
+    let re = `import { Observable } from 'rxjs';`
+  
     assert(Array.isArray(file.match(re)) && file.match(re) != null, "The Observable type hasn't been imported from rxjs yet.");
   });
 
@@ -24,7 +25,7 @@ describe('ProductService getAlbum Method', function () {
     let re = /getAlbum\s*\(\s*id\s*:\s*number\s*\)\s*([\w\s\<\>\:]+)\{/
     let match = file.match(re);
     assert(Array.isArray(match), "The ProductService hasn't defined a `getAlbum` method yet with the correct arguments.")
-    
+
     let the_type = match[1].trim();
 
     let re2 = /\s*\:\s*Observable\<Album\>/
