@@ -10,11 +10,5 @@ describe('ProductService getAlbum Method', function() {
     } catch (e) {
       assert(false, "The ProductService hasn't been created yet.")
     }
-    let re =  'return (this._http.get(this._albumUrl).pipe(map((response) => <Album>response.json())));'
-    console.log(re);
-    let match = file.match(re);
-    //assert(Array.isArray(file.match(re)), "The `getAlbum` method isn't returning the correct response.");
-    //let responseJsonPart = match[1];
-    //assert(responseJsonPart.includes('<Album>'), "You're not asserting that the type of `response.json()` is `Album`.");
   });
 });
